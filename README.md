@@ -1,6 +1,6 @@
 ###Build
 
-[![Build Status](https://travis-ci.org/DeveloperLiberationFront/Spreadsheet-Common-Crawler.svg?branch=master)](https://travis-ci.org/DeveloperLiberationFront/Spreadsheet-Common-Crawler)
+[![Build Status](https://travis-ci.org/kjlubick/DevOps-Project.svg?branch=master)](https://travis-ci.org/kjlubick/DevOps-Project)
 
 Dependencies (and the rest of the build process) are managed by Maven.  To build:   
 1. Install Maven.  
