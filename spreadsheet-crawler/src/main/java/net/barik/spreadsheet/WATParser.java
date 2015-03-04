@@ -177,6 +177,6 @@ public class WATParser {
         System.out.println(json.opt("JSON"));
         System.out.println(json.opt("json"));
 
-        // parse(path, fileInputStream);
+        parse(path, fileInputStream);
     }
 }
