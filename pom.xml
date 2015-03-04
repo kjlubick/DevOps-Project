@@ -18,21 +18,7 @@
 		<module>spreadsheet-crawler</module>
 		<module>spreadsheet-analyzer-hadoop</module>
 	</modules>
-
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.1-SNAPSHOT</version>
-				<configuration>
-					<xmlOutput>true</xmlOutput>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
-
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -54,8 +40,17 @@
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>3.0.1</version>
 			</plugin>
-		</plugins>
 
+					<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<pluginList>devops.jar</pluginList>
+				</configuration>
+			</plugin>
+		</plugins>
 
 	</build>
 
