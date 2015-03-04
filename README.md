@@ -1,6 +1,6 @@
 ###Build
 
-[![Build Status](https://travis-ci.org/kjlubick/DevOps-Project.svg?branch=master)](https://travis-ci.org/kjlubick/DevOps-Project)
+[![Build Status](https://travis-ci.org/kjlubick/DevOps-Project.svg?branch=master)](https://travis-ci.org/kjlubick/DevOps-Project) [![Coverage Status](https://coveralls.io/repos/kjlubick/DevOps-Project/badge.svg?branch=master)](https://coveralls.io/r/kjlubick/DevOps-Project?branch=master)
 
 Dependencies (and the rest of the build process) are managed by Maven.  To build:   
 1. Install Maven.  
