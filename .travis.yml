@@ -14,4 +14,9 @@ cache:
   directories:
     - '$HOME/.m2/repository'
 
-script: mvn test jacoco:report coveralls:report -DrepoToken=$COVERALLS_TOKEN
+before_install: 
+ - wget -O devops.jar https://github.com/kjlubick/DevOps-CustomFindBugs/releases/download/1.1/devops.jar
+
+script: 
+ - mvn findbugs:check
+ - mvn test jacoco:report coveralls:report -DrepoToken=$COVERALLS_TOKEN
