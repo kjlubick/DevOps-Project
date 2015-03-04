@@ -4,11 +4,14 @@ sudo: false
 language: java
 
 # Run memory test 1000 times in a row
-env: BARIK_MEMORY_TEST_LIMIT=1000
-
+env: 
+  global: 
+    - BARIK_MEMORY_TEST_LIMIT=10 
+    - secure: "IwrEEWc5qwVPSgvlS0qMENpZzyACXOasRPJ50WhCuxWfyKlINPMSHnLUHUP9vB5qTvtcp+rC2Naz2euMNruVCTEppcyLrrg0B2hoWqaFtdVmDR3Kse4n9tqFZY6s56JcrEXoXE2Ka7RN0lv+b+GdVRCectq5E09Xwe/8Q6KTt6s="
+ 
 # Cache maven
 cache:
   directories:
     - '$HOME/.m2/repository'
 
-script: mvn test
+script: mvn test jacoco:report coveralls:report -DrepoToken=$COVERALLS_TOKEN
