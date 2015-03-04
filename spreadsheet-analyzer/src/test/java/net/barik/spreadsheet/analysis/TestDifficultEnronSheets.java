@@ -380,6 +380,7 @@ public class TestDifficultEnronSheets {
 		assertEquals("2014-09-03T20:03:56Z", analysis.lastModifiedDate);
 		assertEquals("ect", analysis.company);
 		assertEquals("",analysis.keywords);
+		// everything else is 0
 	}
 	
 	@Test

@@ -77,7 +77,7 @@ public class CSVScanner extends AbstractScanner {
 		thisLine = new StringBuilder();
 
 		append(fileName);
-
+		// handle inputs
 		Map<InputCellType, Integer> inputCounts = analyzer.getInputCellCounts();
 		append(total(inputCounts));
 		append(inputCounts.get(InputCellType.BOOLEAN));
@@ -86,7 +86,7 @@ public class CSVScanner extends AbstractScanner {
 		append(inputCounts.get(InputCellType.INTEGER));
 		append(inputCounts.get(InputCellType.NON_INTEGER_NUMBER));
 		append(inputCounts.get(InputCellType.STRING));
-
+		// handle refereneces
 		Map<InputCellType, Integer> inputReferences = analyzer.getInputReferences();
 		append(total(inputReferences));
 		append(inputReferences.get(InputCellType.BOOLEAN));
@@ -95,7 +95,7 @@ public class CSVScanner extends AbstractScanner {
 		append(inputReferences.get(InputCellType.INTEGER));
 		append(inputReferences.get(InputCellType.NON_INTEGER_NUMBER));
 		append(inputReferences.get(InputCellType.STRING));
-
+		//handle formula counts
 		Map<FunctionEvalType, Integer> formulaCells = analyzer.getFormulaCellCounts();
 		append(total(formulaCells));
 		append(formulaCells.get(FunctionEvalType.BOOLEAN));
@@ -124,6 +124,7 @@ public class CSVScanner extends AbstractScanner {
 		append(analyzer.getContainsMacro());
 
 		Map<String, Integer> functionCounts = analyzer.getFunctionCounts();
+		//handle selected (EUSES) functions
 		append(functionCounts.get("SUMIF"));
 		append(functionCounts.get("COUNTIF"));
 		append(functionCounts.get("CHOOSE"));

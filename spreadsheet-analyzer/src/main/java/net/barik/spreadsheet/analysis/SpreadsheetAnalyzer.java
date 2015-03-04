@@ -209,7 +209,7 @@ public class SpreadsheetAnalyzer {
 			return new AnalysisOutputAndFormulas(new AnalysisOutput(corpusName, identifier, "ENCRYPTED",
 					e.toString()+" : "+Arrays.toString(e.getStackTrace())), Collections.<String>emptySet());
 		}
-		catch (IllegalArgumentException | IOException e) {
+		catch (IllegalArgumentException | IOException e) {  //in bench tests, these errors are generally corruption or "bad format"
 			return new AnalysisOutputAndFormulas(new AnalysisOutput(corpusName, identifier, "CORRUPT",
 					e.toString()+" : "+Arrays.toString(e.getStackTrace())), Collections.<String>emptySet());
 		}
@@ -648,7 +648,7 @@ public class SpreadsheetAnalyzer {
 				continue;
 			}
 			function = function.substring(0, function.length()-1);
-			if (functionsAlreadyFoundInThisCell.contains(function)) {
+			if (functionsAlreadyFoundInThisCell.contains(function)) {	//we don't want to double count functions
 				continue;
 			}
 			functionsAlreadyFoundInThisCell.add(function);

@@ -78,6 +78,7 @@ public class JSONScanner extends AbstractScanner {
 			return false;
 		}
 		
+		// this doesn't get called if there is a failure earlier
 		formulasDirectory = new File("formulas/");
 		try {
 			if (!formulasDirectory.exists()) {
