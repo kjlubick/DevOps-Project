@@ -28,6 +28,7 @@ public class TestDifficultEnronSheets {
 			assertNotNull(is);
 			AnalysisOutput analysis = SpreadsheetAnalyzer.doAnalysisAndGetObject(is, "[test]", "bad_enron_1.xlsx");
 			assertNotNull(analysis);
+			assertNotNull(analysis.toString());
 			is.close();
 		}
 	}
