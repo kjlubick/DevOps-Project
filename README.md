@@ -13,6 +13,7 @@ Useful Maven Commands:
 - Run `mvn eclipse:eclipse -DdownloadSources=true  -DdownloadJavadocs=true` to build an Eclipse project with javadocs and sources linked.  
 - Run `mvn clean compile assembly:single` in one of the module folders to build a jar with dependencies included [source](http://stackoverflow.com/a/574650/1447621)
 - Run `mvn test jacoco:report` from parent directory to run tests and generate a jacoco coverage report.
+- Run `mvn findbugs:findbugs` from parent directory to generate xml findbugs reports
 
 **Travis CI**
 Initially we configured our build to run on 
