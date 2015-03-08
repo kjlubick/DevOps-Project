@@ -40,3 +40,13 @@ Here is a screenshot of the log when "slave 3" picked up a build job:
 
 Our Jenkins config file and the config file for our job are found under `jenkins/`.
 
+###Test
+The primary component in our project that we are interested in testing is the spreadsheet analyzer. We wrote several unit tests for this component. We used Randoop, a constraint-based test generation package, to increase test coverage and generate regression tests for this module. 
+
+Here is a screenshot of the Randoop configuration process.
+![randoop](https://cloud.githubusercontent.com/assets/5032534/6547600/16bf44d6-c5b3-11e4-9dcd-33c6679ec35d.PNG)
+
+We used jacoco and coveralls to measure and report on test coverage. The reports are available at this link here: [![Coverage Status](https://coveralls.io/repos/kjlubick/DevOps-Project/badge.svg?branch=master)](https://coveralls.io/r/kjlubick/DevOps-Project?branch=master).
+
+###Analysis
+We configured our build process to run FindBugs on our code. We also created a custom FindBugs detector to check for sufficient commenting. 
