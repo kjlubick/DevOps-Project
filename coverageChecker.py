@@ -11,7 +11,7 @@ with open(jacoco_file, 'rb') as csvfile:
     except ValueError:
       print(row)
       continue
-    if (row_val > 10):
+    if (row_val > 100):
       print(row[1],row[2], "missed too many instructions in testing") #class name
       exit(5)
       
