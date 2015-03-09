@@ -18,7 +18,7 @@ Useful Maven Commands:
 
 
 ###Test
-The primary component in our project that we are interested in testing is the spreadsheet analyzer. We wrote several unit tests for this component. We used Randoop, a constraint-based test generation package, to increase test coverage and generate regression tests for this module. 
+The primary component in our project that we are interested in testing is the spreadsheet analyzer. We wrote several unit tests for this component. We supplemented these tests with [Randoop](https://code.google.com/p/randoop/), a constraint-based test generation package, to increase test coverage and generate regression tests for this module. Our original tests were pretty thorough, so the generated tests only [increased our coverage by a little bit](https://coveralls.io/builds/2069537).
 
 Here is a screenshot of the Randoop configuration process.
 ![randoop](https://cloud.githubusercontent.com/assets/5032534/6547600/16bf44d6-c5b3-11e4-9dcd-33c6679ec35d.PNG)
@@ -26,8 +26,14 @@ Here is a screenshot of the Randoop configuration process.
 We used jacoco and coveralls to measure and report on test coverage. The reports are available at this link here: [![Coverage Status](https://coveralls.io/repos/kjlubick/DevOps-Project/badge.svg?branch=master)](https://coveralls.io/r/kjlubick/DevOps-Project?branch=master).
 
 ###Analysis
-We configured our build process to run FindBugs on our code. We also created a custom FindBugs detector to check for sufficient commenting. 
+We configured our build process to run FindBugs on our code.  This was easily achieved by using the Findbugs maven plugin and [adding it to our pom](https://github.com/kjlubick/DevOps-Project/commit/45be481f785d0014846acc54d66106d99f542d59). We also created a [custom FindBugs detector](https://github.com/kjlubick/DevOps-CustomFindBugs) to check for sufficient commenting. 
 
+If any "high" severity bugs with a bug rank of 15 or lower are detected, [the build fails](https://travis-ci.org/kjlubick/DevOps-Project/builds/53095587):
+![image](https://cloud.githubusercontent.com/assets/6819944/6562989/ff0adab4-c673-11e4-92fe-30f00d6c6cd5.png)
+
+Additionally, we wrote a [small script](https://github.com/kjlubick/DevOps-Project/blob/b1a8efa3302ea592c5a6c54c564a0306939b6f07/coverageChecker.py) that will [fail the build](https://travis-ci.org/kjlubick/DevOps-Project/builds/53696975) if test coverage isn't high enough, specifically, if any class has more than 100 total uncovered statements, although this is a tunable parameter. 
+
+![image](https://cloud.githubusercontent.com/assets/6819944/6563033/6611180e-c674-11e4-931c-bcda41f33283.png)
 
 
 ##Previous Milestones##
