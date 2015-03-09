@@ -26,7 +26,7 @@ Here is a screenshot of the Randoop configuration process.
 We used jacoco and coveralls to measure and report on test coverage. The reports are available at this link here: [![Coverage Status](https://coveralls.io/repos/kjlubick/DevOps-Project/badge.svg?branch=master)](https://coveralls.io/r/kjlubick/DevOps-Project?branch=master).
 
 ###Analysis
-We configured our build process to run FindBugs on our code.  This was easily achieved by using the Findbugs maven plugin and [adding it to our pom](https://github.com/kjlubick/DevOps-Project/commit/45be481f785d0014846acc54d66106d99f542d59). We also created a [custom FindBugs detector](https://github.com/kjlubick/DevOps-CustomFindBugs) to check for sufficient commenting. 
+We configured our build process to run FindBugs on our code.  This was easily achieved by using the Findbugs maven plugin and [adding it to our pom](https://github.com/kjlubick/DevOps-Project/commit/45be481f785d0014846acc54d66106d99f542d59). We also created a [custom FindBugs detector](https://github.com/kjlubick/DevOps-CustomFindBugs) that makes warnings if non-trivial methods lack comments - the longer the method, the more severe the bug. 
 
 If any "high" severity bugs with a bug rank of 15 or lower are detected, [the build fails](https://travis-ci.org/kjlubick/DevOps-Project/builds/53095587):
 ![image](https://cloud.githubusercontent.com/assets/6819944/6562989/ff0adab4-c673-11e4-92fe-30f00d6c6cd5.png)
