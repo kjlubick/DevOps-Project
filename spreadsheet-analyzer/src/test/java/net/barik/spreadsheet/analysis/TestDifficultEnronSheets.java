@@ -314,7 +314,7 @@ public class TestDifficultEnronSheets {
 		assertEquals("",analysis.keywords);
 	}
 	
-	@Test(timeout=120000)		//two minutes or less
+	@Test(timeout=180000)		//three minutes or less
 	public void testDifficultEnron5() throws Exception {
 		InputStream is = getClass().getResourceAsStream("/bad_enron_5.xlsx");
 		assertNotNull(is);
@@ -395,5 +395,6 @@ public class TestDifficultEnronSheets {
 		assertEquals(340, analysis.integerInputCells);
 		assertEquals(778, analysis.stringInputCells);
 		assertEquals(0, analysis.totalFormulas);
+		//all others are 0
 	}
 }
